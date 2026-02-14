@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For You 💌</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- background music -->
+  <audio id="bgMusic" src="music.mp3" loop></audio>
+
+  <!-- ENVELOPE SECTION -->
+  <div id="envelopeSection">
+    <img id="envelope" src="envelope.png" alt="Envelope" />
+    <p class="volumeHint">(pls max ur vol ;))</p>
+  </div>
+
+  <!-- PASSWORD SCREEN -->
+  <div id="passwordScreen" class="hidden">
+    <div class="passwordBox">
+      <p class="hint">ur fav song 🎵</p>
+      <input id="passwordInput" type="password" placeholder="password" />
+      <button id="enterBtn">open</button>
+      <p id="errorMsg"></p>
+    </div>
+  </div>
+
+  <!-- LETTER OVERLAY -->
+  <div id="letterContainer">
+    <img id="letter1" class="letterPage" src="letter1.jpg" />
+    <img id="letter2" class="letterPage hiddenPage" src="letter2.jpg" />
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

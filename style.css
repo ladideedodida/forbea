@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: url("background.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+/* ================= envelope section ================= */
+
+#envelopeSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: opacity 0.5s ease;
+}
+
+#envelope {
+  width: 260px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#envelope:hover {
+  transform: scale(1.08);
+}
+
+.volumeHint {
+  margin-top: 12px;
+  font-size: 14px;
+  color: white;
+  text-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+/* ================= password ================= */
+
+#passwordScreen {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.passwordBox {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 240px;
+}
+
+.passwordBox input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.passwordBox button {
+  margin-top: 10px;
+  padding: 8px 16px;
+}
+
+.hint {
+  font-size: 14px;
+  color: gray;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#errorMsg {
+  color: crimson;
+  font-size: 12px;
+}
+
+/* ================= letter overlay ================= */
+
+#letterContainer {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  backdrop-filter: blur(8px);
+  background: rgba(0,0,0,0.35);
+
+  transform: scaleY(0);
+  transform-origin: top;
+  opacity: 0;
+  transition: transform 0.9s ease, opacity 0.9s ease;
+}
+
+.letterPage {
+  position: absolute;
+  max-width: 92%;
+  max-height: 92%;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  border-radius: 6px;
+  transition: transform 0.7s ease, opacity 0.7s ease;
+}
+
+/* page 2 initially right */
+.hiddenPage {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.showSecond {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.hideFirst {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.showFirst {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.open {
+  transform: scaleY(1) !important;
+  opacity: 1 !important;
+}
