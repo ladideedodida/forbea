@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: url("background.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+/* ================= envelope ================= */
+
+#envelope {
+  width: 260px;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.5s ease;
+}
+
+#envelope:hover {
+  transform: scale(1.08);
+}
+
+/* ================= password screen ================= */
+
+#passwordScreen {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(6px);
+}
+
+.passwordBox {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 240px;
+}
+
+.passwordBox input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.passwordBox button {
+  margin-top: 10px;
+  padding: 8px 16px;
+}
+
+.hint {
+  font-size: 14px;
+  color: gray;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#errorMsg {
+  color: crimson;
+  font-size: 12px;
+}
+
+/* ================= letter unfolding ================= */
+
+#letterContainer {
+  position: fixed;
+  inset: 0;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  transform: scaleY(0);
+  transform-origin: top;
+  opacity: 0;
+  transition: transform 0.9s ease, opacity 0.9s ease;
+}
+
+.letterPage {
+  position: absolute;
+  max-width: 95%;
+  max-height: 95%;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  transition: transform 0.7s ease, opacity 0.7s ease;
+}
+
+/* second page starts offscreen */
+.hiddenPage {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.showSecond {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.hideFirst {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.open {
+  transform: scaleY(1) !important;
+  opacity: 1 !important;
+}
